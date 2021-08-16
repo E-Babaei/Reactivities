@@ -21,7 +21,7 @@ namespace API.services
         {
             var claims = new List<Claim> {
                 new Claim(ClaimTypes.Name, appUser.UserName),
-                new Claim(ClaimTypes.NameIdentifier, appUser.UserName),
+                new Claim(ClaimTypes.NameIdentifier, appUser.Id),
                 new Claim(ClaimTypes.Email, appUser.Email),
             };
 
