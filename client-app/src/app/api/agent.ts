@@ -93,6 +93,8 @@ const Profiles = {
   },
   setMainPhoto: (id: string) => request.post(`/photos/${id}/setMain`, {}),
   deletePhoto: (id: string) => request.del(`/photos/${id}`),
+  editProfile: (profile: Partial<Profile>) =>
+    request.put<void>("/profiles", profile),
 };
 
 const Account = {
