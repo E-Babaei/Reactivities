@@ -119,9 +119,11 @@ const Profiles = {
 
 const Account = {
   current: () => request.get<User>("/account"),
-  login: (user: UserFormValues) => request.post<User>("account/login", user),
+  login: (user: UserFormValues) => request.post<User>("/account/login", user),
   register: (user: UserFormValues) =>
     request.post<User>("/account/register", user),
+  fbLogin: (accessToken: string) =>
+    request.post<User>(`/account/fbLogin?accessToken=${accessToken}`, {}),
 };
 
 const agent = {
