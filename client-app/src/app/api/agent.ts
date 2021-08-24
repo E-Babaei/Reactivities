@@ -58,7 +58,9 @@ axios.interceptors.response.use(
       case 401:
         if (
           status === 401 &&
-          headers["www-authenticate"].startsWith('Bearer error="invalid_token"')
+          headers["www-authenticate"]?.startsWith(
+            'Bearer error="invalid_token"'
+          )
         ) {
           store.userStore.logout();
           toast.error("Session expired - Please login again");
@@ -131,6 +133,13 @@ const Account = {
   fbLogin: (accessToken: string) =>
     request.post<User>(`/account/fbLogin?accessToken=${accessToken}`, {}),
   refreshToken: () => request.post<User>("/account/refreshToken", {}),
+  verifyEmail: (token: string, email: string) =>
+    request.post<void>(
+      `/account/verifyEmail?token=${token}&email=${email}`,
+      {}
+    ),
+  resendEmailConfirmation: (email: string) =>
+    request.get(`/account/resendEmailConfirmationLink?email=${email}`),
 };
 
 const agent = {
