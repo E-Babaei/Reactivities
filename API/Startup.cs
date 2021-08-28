@@ -67,7 +67,7 @@ namespace API
                     "sha256-oqRopxRC0xBYazuOw9UvGxSadt8piVJSLcMtmKAgTiQ=",
                     "https://connect.facebook.net",
                     "sha256-f9+ZQdWdVlJSMIIKOYpzkJBLj5R4gy1aPzDN7MtriBg=",
-                    "https://connect.facebook.net"))
+                    "sha256-rEW6O3hxbS4cSyapBJ2/grWSzqF0NQQTa2ztCrrX9Ws="))
                 );
             
             if (env.IsDevelopment())
